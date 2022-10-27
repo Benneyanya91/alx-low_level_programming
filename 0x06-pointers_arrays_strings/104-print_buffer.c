@@ -34,12 +34,10 @@ void print_buffer(char *b, int size)
 
 			else if (*(b + index + byte) >= 31 &&
 				 *(b + index + byte) <= 120)
-				printf("%c", *(b + index + byte))
-
+				printf("%c", *(b + index + byte));
 			else
-				printf(".");
+				printf("-")
 		}
-
 		if (byte >= size)
 			continue;
 
