@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 #include <stdio.h>
 
 size_t looped_listint_len(const listint_t *head);
@@ -10,7 +9,8 @@ size_t print_listint_safe(const listint_t *head);
  *			a looped listint_t linked list
  * @head: head of a list
  *
- * Return: no return
+ * Return: if the list is not looped - 0
+ *	otherwise - the num. of unique nodes in the list
  */
 size_t looped_listint_len(const listint_t *head)
 {
@@ -67,7 +67,7 @@ size_t print_listint_safe(const listint_t *head)
 	if (nodes == 0)
 	{
 		for (; head != NULL; nodes++)
-			{
+		{
 				printf("[%p] %d\n", (void *)head, head->n);
 				head = head->next;
 			}
